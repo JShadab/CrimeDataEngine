@@ -1,0 +1,48 @@
+
+apply plugin: 'war'
+
+
+repositories {
+  mavenCentral()
+
+  flatDir {
+    dirs '../../custom/build/libs'
+  }
+}
+
+dependencies {
+
+  compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+  
+  // https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api
+compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.0.Final'
+  
+}
+
+
+task run(type: JavaExec) {
+  description = "HIDDIN HUB - R1"
+  classpath = sourceSets.main.runtimeClasspath
+  main =  'com.server.Hello'
+}
+
+task performJPAWeaving(type: JavaExec, dependsOn: "compileJava"){
+  inputs.dir compileJava.destinationDir
+  outputs.dir compileJava.destinationDir
+  main "org.eclipse.persistence.tools.weaving.jpa.StaticWeave"
+  args  "-persistenceinfo",
+          "src/main/resources",
+          compileJava.destinationDir.getAbsolutePath(),
+          compileJava.destinationDir.getAbsolutePath()
+  classpath = configurations.compile
+}
+
+tasks.withType(JavaCompile){
+  doLast{
+    tasks.performJPAWeaving.execute()
+  }
+}
+
+project.webAppDirName = 'WebContent'
+
+apply plugin: 'eclipse-wtp'
