@@ -7,7 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.print.PrinterException;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -29,6 +31,7 @@ import javax.swing.table.AbstractTableModel;
 
 import org.crime.db.CrimeDAO;
 import org.crime.model.CrimeData;
+import org.crime.utils.CrimeDataNotFoundException;
 
 public class GUIHandler extends JFrame {
 
@@ -43,7 +46,7 @@ public class GUIHandler extends JFrame {
 
 		setJMenuBar(getMyMenuBar());
 
-		setSize(700, 600);
+		setSize(800, 600);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setVisible(true);
@@ -82,7 +85,22 @@ public class GUIHandler extends JFrame {
 		menu.add(itemNoCrimeId);
 		menu.add(itemDuplicateCrimeId);
 
+		JMenu menuDisplay = new JMenu("Display");
+
+		JMenuItem itemCountyChart = new JMenuItem("County Chart");
+
+		itemCountyChart.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				new CountyChart();
+			}
+		});
+		menuDisplay.add(itemCountyChart);
+
 		menuBar.add(menu);
+		menuBar.add(menuDisplay);
 
 		return menuBar;
 	}
@@ -152,6 +170,8 @@ public class GUIHandler extends JFrame {
 
 		tabel = new JTable();
 
+		tabel.setRowHeight(20);
+
 		JScrollPane jsp = new JScrollPane(tabel);
 
 		panel.add(jsp);
@@ -185,7 +205,23 @@ public class GUIHandler extends JFrame {
 			}
 		});
 
+		JButton btnPrint = new JButton("Print");
+		btnPrint.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					tabel.print();
+				} catch (PrinterException e1) {
+					e1.printStackTrace();
+				}
+
+			}
+
+		});
+
 		panel.add(btnSearch);
+		panel.add(btnPrint);
 		panel.add(btnClose);
 
 		Border border = BorderFactory.createLineBorder(Color.GRAY, 2);
@@ -199,24 +235,34 @@ public class GUIHandler extends JFrame {
 
 		String item = (String) cmbSearch.getSelectedItem();
 
-		if ("Longitude & Latitude".equals(item)) {
+		try {
+			if ("Longitude & Latitude".equals(item)) {
 
-			String longitude = txtLongitude.getText();
-			String latitude = txtLatitude.getText();
-			allCrimeData = CrimeDAO.getCrimeDataByLongitudeAndLatitude(longitude, latitude);
+				String longitude = txtLongitude.getText();
+				String latitude = txtLatitude.getText();
+				allCrimeData = CrimeDAO.getCrimeDataByLongitudeAndLatitude(longitude, latitude);
 
-		} else if ("Crime Type".equals(item)) {
-			String crimeType = (String) cmbCrimeType.getSelectedItem();
-			allCrimeData = CrimeDAO.getCrimeDataByCrimeType(crimeType);
-		} else if ("Longitude".equals(item)) {
-			String longitude = txtSearch.getText();
-			allCrimeData = CrimeDAO.getCrimeDataByLongitude(longitude);
-		} else if ("Latitude".equals(item)) {
-			String latitude = txtSearch.getText();
-			allCrimeData = CrimeDAO.getCrimeDataByLatitude(latitude);
-		} else if ("LSOA name".equals(item)) {
-			String losaName = txtSearch.getText();
-			allCrimeData = CrimeDAO.getCrimeDataByLSOAname(losaName);
+			} else if ("Crime Type".equals(item)) {
+				String crimeType = (String) cmbCrimeType.getSelectedItem();
+				allCrimeData = CrimeDAO.getCrimeDataByCrimeType(crimeType);
+			} else if ("Longitude".equals(item)) {
+				String longitude = txtSearch.getText();
+				allCrimeData = CrimeDAO.getCrimeDataByLongitude(longitude);
+			} else if ("Latitude".equals(item)) {
+				String latitude = txtSearch.getText();
+				allCrimeData = CrimeDAO.getCrimeDataByLatitude(latitude);
+			} else if ("LSOA name".equals(item)) {
+				String losaName = txtSearch.getText();
+				allCrimeData = CrimeDAO.getCrimeDataByLSOAname(losaName);
+			}
+		} catch (CrimeDataNotFoundException e) {
+			allCrimeData = new ArrayList<>();
+		}
+
+		if (allCrimeData.size() > 10) {
+
+			allCrimeData = allCrimeData.subList(0, 10);
+
 		}
 
 		tabel.setModel(new CrimeTableModel());
@@ -282,9 +328,9 @@ public class GUIHandler extends JFrame {
 			case COL_REPORTED_BY: {
 				return crimeData.getReportedBy();
 			}
-			case COL_CONTEXT: {
-				return crimeData.getContext();
-			}
+			// case COL_CONTEXT: {
+			// return crimeData.getContext();
+			// }
 			case COL_CRIME_TYPE: {
 				return crimeData.getCrimeType();
 			}
@@ -318,7 +364,7 @@ public class GUIHandler extends JFrame {
 	}
 
 	static final private String[] columns = { "crimeId", "month", "reportedBy", "fallsWithin", "longitude", "latitude",
-			"location", "LSOA_code", "LSOA_name", "crimeType", "lastOutcomeCategory", "Context" };
+			"location", "LSOA_code", "LSOA_name", "crimeType", "lastOutcomeCategory"/* , "Context" */ };
 
 	private List<CrimeData> allCrimeData;
 	private JComboBox<String> cmbSearch;
@@ -339,5 +385,5 @@ public class GUIHandler extends JFrame {
 	private static final int COL_LOSA_NAME = 8;
 	private static final int COL_CRIME_TYPE = 9;
 	private static final int COL_LAST_OUTCOME_CATEGORY = 10;
-	private static final int COL_CONTEXT = 11;
+	// private static final int COL_CONTEXT = 11;
 }

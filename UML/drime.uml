@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_8wuN4U_REei2FuyaDmk0Dg">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_86i4QE_REei2FuyaDmk0Dg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_88TLwk_REei2FuyaDmk0Dg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_8196QE_REei2FuyaDmk0Dg" name="src">
+    <packagedElement xmi:type="uml:Package" xmi:id="_82HrQE_REei2FuyaDmk0Dg" name="org">
+      <packagedElement xmi:type="uml:Package" xmi:id="_82HrQU_REei2FuyaDmk0Dg" name="crime">
+        <packagedElement xmi:type="uml:Class" xmi:id="_82amME_REei2FuyaDmk0Dg" name="Main">
+          <ownedOperation xmi:id="_86kGYE_REei2FuyaDmk0Dg" name="main" visibility="public" isStatic="true">
+            <ownedParameter xmi:id="_86kGYU_REei2FuyaDmk0Dg" name="args">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_86kGYk_REei2FuyaDmk0Dg" value="*"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_86kGY0_REei2FuyaDmk0Dg"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_83OegE_REei2FuyaDmk0Dg" name="db">
+          <packagedElement xmi:type="uml:Class" xmi:id="_83OegU_REei2FuyaDmk0Dg" name="CrimeDAO">
+            <ownedOperation xmi:id="_86lUgE_REei2FuyaDmk0Dg" name="getCrimeDataByLongitude" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_86lUgU_REei2FuyaDmk0Dg" name="longitude">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_86lUgk_REei2FuyaDmk0Dg" name="return" type="_841oIU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_86l7kE_REei2FuyaDmk0Dg" name="getCrimeDataByLatitude" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_86l7kU_REei2FuyaDmk0Dg" name="latitude">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_86l7kk_REei2FuyaDmk0Dg" name="return" type="_841oIU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_86l7k0_REei2FuyaDmk0Dg" name="getCrimeDataByLSOAname" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_86l7lE_REei2FuyaDmk0Dg" name="LSOAname">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_86l7lU_REei2FuyaDmk0Dg" name="return" type="_841oIU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_86l7lk_REei2FuyaDmk0Dg" name="getCrimeDataByCrimeType" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_86l7l0_REei2FuyaDmk0Dg" name="crimeType">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_86l7mE_REei2FuyaDmk0Dg" name="return" type="_841oIU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_86vskE_REei2FuyaDmk0Dg" name="getCrimeDataByLongitudeAndLatitude" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_86vskU_REei2FuyaDmk0Dg" name="longitude">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_86vskk_REei2FuyaDmk0Dg" name="latitude">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_86vsk0_REei2FuyaDmk0Dg" name="return" type="_841oIU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_86vslE_REei2FuyaDmk0Dg" name="getAllCrimeTypes" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_86vslU_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_86vslk_REei2FuyaDmk0Dg" name="getCrimeDataWithNoCrimeId" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_86vsl0_REei2FuyaDmk0Dg" name="return" type="_841oIU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_86vsmE_REei2FuyaDmk0Dg" name="getCrimeDataWithDuplicateCrimeId" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_86vsmU_REei2FuyaDmk0Dg" name="return" type="_841oIU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_865dkE_REei2FuyaDmk0Dg" name="getCrimeDataWithDuplicateFallIn" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_865dkU_REei2FuyaDmk0Dg" name="return" type="_841oIU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_865dkk_REei2FuyaDmk0Dg" name="getAllCrimeData" visibility="private" isStatic="true">
+              <ownedParameter xmi:id="_865dk0_REei2FuyaDmk0Dg" name="return" type="_841oIk_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_865dlE_REei2FuyaDmk0Dg" name="mapCountiVsCount" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_865dlU_REei2FuyaDmk0Dg" name="return" type="_841oIk_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_865dlk_REei2FuyaDmk0Dg" name="findCounties" visibility="private" isStatic="true">
+              <ownedParameter xmi:id="_865dl0_REei2FuyaDmk0Dg" name="return" type="_841oI0_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87CngE_REei2FuyaDmk0Dg" name="extractData" visibility="private" isStatic="true">
+              <ownedParameter xmi:id="_87CngU_REei2FuyaDmk0Dg" name="rs" type="_841oG0_REei2FuyaDmk0Dg"/>
+              <ownedParameter xmi:id="_87Cngk_REei2FuyaDmk0Dg" name="return" type="_841oIU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_83hZcE_REei2FuyaDmk0Dg" name="DatabaseHandler">
+            <ownedAttribute xmi:id="_87Cng0_REei2FuyaDmk0Dg" name="connection" visibility="private" isStatic="true" type="_841oGU_REei2FuyaDmk0Dg"/>
+            <ownedOperation xmi:id="_87CnhE_REei2FuyaDmk0Dg" name="handleDbConnection" visibility="public" isStatic="true">
+              <ownedParameter xmi:id="_87CnhU_REei2FuyaDmk0Dg" name="return" type="_841oGU_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_83hZcU_REei2FuyaDmk0Dg" name="model">
+          <packagedElement xmi:type="uml:Class" xmi:id="_83hZck_REei2FuyaDmk0Dg" name="CrimeData">
+            <ownedAttribute xmi:id="_87Cnhk_REei2FuyaDmk0Dg" name="crimeId" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87Cnh0_REei2FuyaDmk0Dg" name="month" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87CniE_REei2FuyaDmk0Dg" name="reportedBy" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87MYgE_REei2FuyaDmk0Dg" name="fallsWithin" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87MYgU_REei2FuyaDmk0Dg" name="longitude" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87MYgk_REei2FuyaDmk0Dg" name="latitude" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87MYg0_REei2FuyaDmk0Dg" name="location" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87MYhE_REei2FuyaDmk0Dg" name="LSOA_code" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87VicE_REei2FuyaDmk0Dg" name="LSOA_name" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87VicU_REei2FuyaDmk0Dg" name="crimeType" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87Vick_REei2FuyaDmk0Dg" name="lastOutcomeCategory" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87hIoE_REei2FuyaDmk0Dg" name="Context" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedOperation xmi:id="_87hvsE_REei2FuyaDmk0Dg" name="getCrimeId" visibility="public">
+              <ownedParameter xmi:id="_87hvsU_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87i90E_REei2FuyaDmk0Dg" name="setCrimeId" visibility="public">
+              <ownedParameter xmi:id="_87i90U_REei2FuyaDmk0Dg" name="crimeId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk4E_REei2FuyaDmk0Dg" name="getMonth" visibility="public">
+              <ownedParameter xmi:id="_87jk4U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk4k_REei2FuyaDmk0Dg" name="setMonth" visibility="public">
+              <ownedParameter xmi:id="_87jk40_REei2FuyaDmk0Dg" name="month">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk5E_REei2FuyaDmk0Dg" name="getReportedBy" visibility="public">
+              <ownedParameter xmi:id="_87jk5U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk5k_REei2FuyaDmk0Dg" name="setReportedBy" visibility="public">
+              <ownedParameter xmi:id="_87jk50_REei2FuyaDmk0Dg" name="reportedBy">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk6E_REei2FuyaDmk0Dg" name="getFallsWithin" visibility="public">
+              <ownedParameter xmi:id="_87jk6U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk6k_REei2FuyaDmk0Dg" name="setFallsWithin" visibility="public">
+              <ownedParameter xmi:id="_87jk60_REei2FuyaDmk0Dg" name="fallsWithin">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk7E_REei2FuyaDmk0Dg" name="getLongitude" visibility="public">
+              <ownedParameter xmi:id="_87jk7U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk7k_REei2FuyaDmk0Dg" name="setLongitude" visibility="public">
+              <ownedParameter xmi:id="_87jk70_REei2FuyaDmk0Dg" name="longitude">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk8E_REei2FuyaDmk0Dg" name="getLatitude" visibility="public">
+              <ownedParameter xmi:id="_87jk8U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87jk8k_REei2FuyaDmk0Dg" name="setLatitude" visibility="public">
+              <ownedParameter xmi:id="_87jk80_REei2FuyaDmk0Dg" name="latitude">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su0E_REei2FuyaDmk0Dg" name="getLocation" visibility="public">
+              <ownedParameter xmi:id="_87su0U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su0k_REei2FuyaDmk0Dg" name="setLocation" visibility="public">
+              <ownedParameter xmi:id="_87su00_REei2FuyaDmk0Dg" name="location">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su1E_REei2FuyaDmk0Dg" name="getLSOA_code" visibility="public">
+              <ownedParameter xmi:id="_87su1U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su1k_REei2FuyaDmk0Dg" name="setLSOA_code" visibility="public">
+              <ownedParameter xmi:id="_87su10_REei2FuyaDmk0Dg" name="lSOA_code">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su2E_REei2FuyaDmk0Dg" name="getLSOA_name" visibility="public">
+              <ownedParameter xmi:id="_87su2U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su2k_REei2FuyaDmk0Dg" name="setLSOA_name" visibility="public">
+              <ownedParameter xmi:id="_87su20_REei2FuyaDmk0Dg" name="lSOA_name">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su3E_REei2FuyaDmk0Dg" name="getCrimeType" visibility="public">
+              <ownedParameter xmi:id="_87su3U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su3k_REei2FuyaDmk0Dg" name="setCrimeType" visibility="public">
+              <ownedParameter xmi:id="_87su30_REei2FuyaDmk0Dg" name="crimeType">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su4E_REei2FuyaDmk0Dg" name="getLastOutcomeCategory" visibility="public">
+              <ownedParameter xmi:id="_87su4U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su4k_REei2FuyaDmk0Dg" name="setLastOutcomeCategory" visibility="public">
+              <ownedParameter xmi:id="_87su40_REei2FuyaDmk0Dg" name="lastOutcomeCategory">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_87su5E_REei2FuyaDmk0Dg" name="getContext" visibility="public">
+              <ownedParameter xmi:id="_87su5U_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_872f0E_REei2FuyaDmk0Dg" name="setContext" visibility="public">
+              <ownedParameter xmi:id="_872f0U_REei2FuyaDmk0Dg" name="context">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_872f0k_REei2FuyaDmk0Dg" name="toString" visibility="public">
+              <ownedParameter xmi:id="_872f00_REei2FuyaDmk0Dg" name="return" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+            </ownedOperation>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_83sYkE_REei2FuyaDmk0Dg" name="ui">
+          <packagedElement xmi:type="uml:Class" xmi:id="_83s_oE_REei2FuyaDmk0Dg" name="CountyChart">
+            <generalization xmi:id="_872f1E_REei2FuyaDmk0Dg" general="_84-yDU_REei2FuyaDmk0Dg"/>
+            <ownedOperation xmi:id="_872f1U_REei2FuyaDmk0Dg" name="getBottomPanel" visibility="private">
+              <ownedParameter xmi:id="_872f1k_REei2FuyaDmk0Dg" name="return" type="_84-yD0_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_83u00E_REei2FuyaDmk0Dg" name="GUIHandler">
+            <generalization xmi:id="_872f10_REei2FuyaDmk0Dg" general="_84-yDU_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_872f2E_REei2FuyaDmk0Dg" name="columns" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_872f2U_REei2FuyaDmk0Dg" value="*"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_872f2k_REei2FuyaDmk0Dg"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_87_pwE_REei2FuyaDmk0Dg" name="allCrimeData" visibility="private" type="_872f20_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_87_pwk_REei2FuyaDmk0Dg" name="cmbSearch" visibility="private" type="_87_pwU_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_87_pw0_REei2FuyaDmk0Dg" name="txtSearch" visibility="private" type="_84-yEU_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_88JawE_REei2FuyaDmk0Dg" name="txtLongitude" visibility="private" type="_84-yEU_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_88JawU_REei2FuyaDmk0Dg" name="txtLatitude" visibility="private" type="_84-yEU_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_88TLwE_REei2FuyaDmk0Dg" name="cmbCrimeType" visibility="private" type="_87_pwU_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_88TLwU_REei2FuyaDmk0Dg" name="tabel" visibility="private" type="_84-yEE_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_88TLw0_REei2FuyaDmk0Dg" name="COL_ID" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_88TLxE_REei2FuyaDmk0Dg"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_88fZAE_REei2FuyaDmk0Dg" name="COL_MONTH" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_88fZAU_REei2FuyaDmk0Dg" value="1"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_88gnIE_REei2FuyaDmk0Dg" name="COL_REPORTED_BY" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_88gnIU_REei2FuyaDmk0Dg" value="2"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_88gnIk_REei2FuyaDmk0Dg" name="COL_FALLS_WITHIN" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_88gnI0_REei2FuyaDmk0Dg" value="3"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_88qYIE_REei2FuyaDmk0Dg" name="COL_LONGITUDE" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_88qYIU_REei2FuyaDmk0Dg" value="4"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_88qYIk_REei2FuyaDmk0Dg" name="COL_LATITUDE" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_88qYI0_REei2FuyaDmk0Dg" value="5"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_88ziEE_REei2FuyaDmk0Dg" name="COL_LOCATION" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_88ziEU_REei2FuyaDmk0Dg" value="6"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_88ziEk_REei2FuyaDmk0Dg" name="COL_LOSA_CODE" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_88ziE0_REei2FuyaDmk0Dg" value="7"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_88ziFE_REei2FuyaDmk0Dg" name="COL_LOSA_NAME" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_88ziFU_REei2FuyaDmk0Dg" value="8"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_889TEE_REei2FuyaDmk0Dg" name="COL_CRIME_TYPE" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_889TEU_REei2FuyaDmk0Dg" value="9"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_889TEk_REei2FuyaDmk0Dg" name="COL_LAST_OUTCOME_CATEGORY" visibility="private" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_889TE0_REei2FuyaDmk0Dg" value="10"/>
+            </ownedAttribute>
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_83u00U_REei2FuyaDmk0Dg" name="CrimeTableModel" visibility="private">
+              <generalization xmi:id="_89GdCU_REei2FuyaDmk0Dg" general="_84-yFU_REei2FuyaDmk0Dg"/>
+              <ownedOperation xmi:id="_89GdCk_REei2FuyaDmk0Dg" name="getRowCount" visibility="public">
+                <ownedParameter xmi:id="_89GdC0_REei2FuyaDmk0Dg" name="return" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_89QOAE_REei2FuyaDmk0Dg" name="getColumnCount" visibility="public">
+                <ownedParameter xmi:id="_89QOAU_REei2FuyaDmk0Dg" name="return" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_89QOAk_REei2FuyaDmk0Dg" name="getColumnName" visibility="public">
+                <ownedParameter xmi:id="_89QOA0_REei2FuyaDmk0Dg" name="colIndex">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_89QOBE_REei2FuyaDmk0Dg" name="return" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_89QOBk_REei2FuyaDmk0Dg" name="getValueAt" visibility="public">
+                <ownedParameter xmi:id="_89QOB0_REei2FuyaDmk0Dg" name="rowIndex">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_89QOCE_REei2FuyaDmk0Dg" name="columnIndex">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_89QOCU_REei2FuyaDmk0Dg" name="return" type="_89QOBU_REei2FuyaDmk0Dg" direction="return"/>
+              </ownedOperation>
+            </nestedClassifier>
+            <ownedOperation xmi:id="_889TFE_REei2FuyaDmk0Dg" name="getMyMenuBar" visibility="private">
+              <ownedParameter xmi:id="_889TFU_REei2FuyaDmk0Dg" name="return" type="_84-yHk_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_89GdAE_REei2FuyaDmk0Dg" name="getTopPanel" visibility="private">
+              <ownedParameter xmi:id="_89GdAU_REei2FuyaDmk0Dg" name="return" type="_84-yD0_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_89GdAk_REei2FuyaDmk0Dg" name="getCenterPanel" visibility="private">
+              <ownedParameter xmi:id="_89GdA0_REei2FuyaDmk0Dg" name="return" type="_84-yD0_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_89GdBE_REei2FuyaDmk0Dg" name="getBottomPanel" visibility="private">
+              <ownedParameter xmi:id="_89GdBU_REei2FuyaDmk0Dg" name="return" type="_84-yD0_REei2FuyaDmk0Dg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_89GdBk_REei2FuyaDmk0Dg" name="actionSearch" visibility="private"/>
+            <ownedOperation xmi:id="_89GdB0_REei2FuyaDmk0Dg" name="actionExport" visibility="private">
+              <ownedParameter xmi:id="_89GdCE_REei2FuyaDmk0Dg" name="allCrimeData" type="_841oIU_REei2FuyaDmk0Dg"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_834l0E_REei2FuyaDmk0Dg" name="ChartPanel">
+            <generalization xmi:id="_89QOCk_REei2FuyaDmk0Dg" general="_84-yD0_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_89QODE_REei2FuyaDmk0Dg" name="map" visibility="private" type="_89QOC0_REei2FuyaDmk0Dg"/>
+            <ownedAttribute xmi:id="_89QODU_REei2FuyaDmk0Dg" name="total" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedAttribute>
+            <ownedOperation xmi:id="_89amEE_REei2FuyaDmk0Dg" name="paintComponent" visibility="protected">
+              <ownedParameter xmi:id="_89amEU_REei2FuyaDmk0Dg" name="g" type="_84-yIU_REei2FuyaDmk0Dg"/>
+            </ownedOperation>
+          </packagedElement>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_834l0U_REei2FuyaDmk0Dg" name="utils">
+          <packagedElement xmi:type="uml:Class" xmi:id="_834l0k_REei2FuyaDmk0Dg" name="CrimeDataNotFoundException">
+            <generalization xmi:id="_89b0MU_REei2FuyaDmk0Dg" general="_89b0ME_REei2FuyaDmk0Dg"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_834l00_REei2FuyaDmk0Dg" name="EngineNotWorkingException">
+            <generalization xmi:id="_89b0Mk_REei2FuyaDmk0Dg" general="_89b0ME_REei2FuyaDmk0Dg"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_841oEE_REei2FuyaDmk0Dg" name="javax">
+    <packagedElement xmi:type="uml:Package" xmi:id="_841oEU_REei2FuyaDmk0Dg" name="swing">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oEk_REei2FuyaDmk0Dg" name="UIManager"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yCU_REei2FuyaDmk0Dg" name="BorderFactory"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yCk_REei2FuyaDmk0Dg" name="JButton"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yC0_REei2FuyaDmk0Dg" name="JComboBox"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yDE_REei2FuyaDmk0Dg" name="JFileChooser"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yDU_REei2FuyaDmk0Dg" name="JFrame"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yDk_REei2FuyaDmk0Dg" name="JOptionPane"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yD0_REei2FuyaDmk0Dg" name="JPanel"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yEE_REei2FuyaDmk0Dg" name="JTable"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yEU_REei2FuyaDmk0Dg" name="JTextField"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_84-yEk_REei2FuyaDmk0Dg" name="border">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_84-yE0_REei2FuyaDmk0Dg" name="Border"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_84-yFE_REei2FuyaDmk0Dg" name="table">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_84-yFU_REei2FuyaDmk0Dg" name="AbstractTableModel"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yHE_REei2FuyaDmk0Dg" name="JLabel"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yHU_REei2FuyaDmk0Dg" name="JMenu"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yHk_REei2FuyaDmk0Dg" name="JMenuBar"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yH0_REei2FuyaDmk0Dg" name="JMenuItem"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yIE_REei2FuyaDmk0Dg" name="JScrollPane"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_841oE0_REei2FuyaDmk0Dg" name="org">
+    <packagedElement xmi:type="uml:Package" xmi:id="_841oFE_REei2FuyaDmk0Dg" name="crime">
+      <packagedElement xmi:type="uml:Package" xmi:id="_841oFU_REei2FuyaDmk0Dg" name="ui">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_841oFk_REei2FuyaDmk0Dg" name="GUIHandler"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_841oJE_REei2FuyaDmk0Dg" name="model">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_841oJU_REei2FuyaDmk0Dg" name="CrimeData"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_841oJk_REei2FuyaDmk0Dg" name="utils">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_841oJ0_REei2FuyaDmk0Dg" name="CrimeDataNotFoundException"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_841oKE_REei2FuyaDmk0Dg" name="EngineNotWorkingException"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_84-yFk_REei2FuyaDmk0Dg" name="db">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_84-yF0_REei2FuyaDmk0Dg" name="CrimeDAO"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_841oF0_REei2FuyaDmk0Dg" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_841oGE_REei2FuyaDmk0Dg" name="sql">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oGU_REei2FuyaDmk0Dg" name="Connection"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oGk_REei2FuyaDmk0Dg" name="PreparedStatement"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oG0_REei2FuyaDmk0Dg" name="ResultSet"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oHE_REei2FuyaDmk0Dg" name="SQLException"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oKU_REei2FuyaDmk0Dg" name="DriverManager"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_841oHU_REei2FuyaDmk0Dg" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oHk_REei2FuyaDmk0Dg" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oH0_REei2FuyaDmk0Dg" name="HashMap"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oIE_REei2FuyaDmk0Dg" name="HashSet"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oIU_REei2FuyaDmk0Dg" name="List"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oIk_REei2FuyaDmk0Dg" name="Map"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841oI0_REei2FuyaDmk0Dg" name="Set"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yJU_REei2FuyaDmk0Dg" name="Collection"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_84-yAE_REei2FuyaDmk0Dg" name="awt">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yAU_REei2FuyaDmk0Dg" name="BorderLayout"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yAk_REei2FuyaDmk0Dg" name="Color"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yA0_REei2FuyaDmk0Dg" name="Container"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_84-yBE_REei2FuyaDmk0Dg" name="event">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_84-yBU_REei2FuyaDmk0Dg" name="ActionEvent"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_84-yBk_REei2FuyaDmk0Dg" name="ActionListener"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_84-yGE_REei2FuyaDmk0Dg" name="ItemEvent"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_84-yGU_REei2FuyaDmk0Dg" name="ItemListener"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_84-yGk_REei2FuyaDmk0Dg" name="print">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_84-yG0_REei2FuyaDmk0Dg" name="PrinterException"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yIU_REei2FuyaDmk0Dg" name="Graphics"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yIk_REei2FuyaDmk0Dg" name="Graphics2D"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_84-yI0_REei2FuyaDmk0Dg" name="geom">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_84-yJE_REei2FuyaDmk0Dg" name="Rectangle2D"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_84-yB0_REei2FuyaDmk0Dg" name="io">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_84-yCE_REei2FuyaDmk0Dg" name="FileWriter"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_872f20_REei2FuyaDmk0Dg" name="List&lt;CrimeData>"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_87_pwU_REei2FuyaDmk0Dg" name="JComboBox&lt;String>"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_89QOBU_REei2FuyaDmk0Dg" name="Object"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_89QOC0_REei2FuyaDmk0Dg" name="Map&lt;String,Integer>"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_89b0ME_REei2FuyaDmk0Dg" name="Exception"/>
+</uml:Model>
