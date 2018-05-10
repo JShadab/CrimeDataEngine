@@ -32,6 +32,7 @@ import javax.swing.table.AbstractTableModel;
 import org.crime.db.CrimeDAO;
 import org.crime.model.CrimeData;
 import org.crime.utils.CrimeDataNotFoundException;
+import org.crime.utils.DataQualityCheck;
 
 public class GUIHandler extends JFrame {
 
@@ -65,9 +66,8 @@ public class GUIHandler extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				List<CrimeData> allCrimeData = CrimeDAO.getCrimeDataWithNoCrimeId();
+				DataQualityCheck.exportNoCrimeId();
 
-				actionExport(allCrimeData);
 			}
 		});
 
@@ -76,9 +76,7 @@ public class GUIHandler extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				List<CrimeData> allCrimeData = CrimeDAO.getCrimeDataWithDuplicateCrimeId();
-
-				actionExport(allCrimeData);
+				DataQualityCheck.exportDuplicateCrimeId();
 			}
 		});
 
@@ -231,70 +229,6 @@ public class GUIHandler extends JFrame {
 
 	}
 
-	private void actionSearch() {
-
-		String item = (String) cmbSearch.getSelectedItem();
-
-		try {
-			if ("Longitude & Latitude".equals(item)) {
-
-				String longitude = txtLongitude.getText();
-				String latitude = txtLatitude.getText();
-				allCrimeData = CrimeDAO.getCrimeDataByLongitudeAndLatitude(longitude, latitude);
-
-			} else if ("Crime Type".equals(item)) {
-				String crimeType = (String) cmbCrimeType.getSelectedItem();
-				allCrimeData = CrimeDAO.getCrimeDataByCrimeType(crimeType);
-			} else if ("Longitude".equals(item)) {
-				String longitude = txtSearch.getText();
-				allCrimeData = CrimeDAO.getCrimeDataByLongitude(longitude);
-			} else if ("Latitude".equals(item)) {
-				String latitude = txtSearch.getText();
-				allCrimeData = CrimeDAO.getCrimeDataByLatitude(latitude);
-			} else if ("LSOA name".equals(item)) {
-				String losaName = txtSearch.getText();
-				allCrimeData = CrimeDAO.getCrimeDataByLSOAname(losaName);
-			}
-		} catch (CrimeDataNotFoundException e) {
-			allCrimeData = new ArrayList<>();
-		}
-
-		if (allCrimeData.size() > 10) {
-
-			allCrimeData = allCrimeData.subList(0, 10);
-
-		}
-
-		tabel.setModel(new CrimeTableModel());
-
-	}
-
-	private void actionExport(List<CrimeData> allCrimeData) {
-
-		JFileChooser fileChooser = new JFileChooser();
-
-		StringBuilder sb = new StringBuilder();
-
-		for (CrimeData crimeData : allCrimeData) {
-			sb.append(crimeData.toString());
-			sb.append("\n");
-		}
-
-		int retrival = fileChooser.showSaveDialog(GUIHandler.this);
-		if (retrival == JFileChooser.APPROVE_OPTION) {
-			try {
-				FileWriter fw = new FileWriter(fileChooser.getSelectedFile() + ".txt");
-				fw.write(sb.toString());
-
-				fw.close();
-			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
-		}
-
-		JOptionPane.showMessageDialog(GUIHandler.this, "Data Exported Successfully");
-	}
-
 	private class CrimeTableModel extends AbstractTableModel {
 
 		@Override
@@ -361,6 +295,44 @@ public class GUIHandler extends JFrame {
 			}
 
 		}
+	}
+
+	private void actionSearch() {
+
+		String item = (String) cmbSearch.getSelectedItem();
+
+		try {
+			if ("Longitude & Latitude".equals(item)) {
+
+				String longitude = txtLongitude.getText();
+				String latitude = txtLatitude.getText();
+				allCrimeData = CrimeDAO.getCrimeDataByLongitudeAndLatitude(longitude, latitude);
+
+			} else if ("Crime Type".equals(item)) {
+				String crimeType = (String) cmbCrimeType.getSelectedItem();
+				allCrimeData = CrimeDAO.getCrimeDataByCrimeType(crimeType);
+			} else if ("Longitude".equals(item)) {
+				String longitude = txtSearch.getText();
+				allCrimeData = CrimeDAO.getCrimeDataByLongitude(longitude);
+			} else if ("Latitude".equals(item)) {
+				String latitude = txtSearch.getText();
+				allCrimeData = CrimeDAO.getCrimeDataByLatitude(latitude);
+			} else if ("LSOA name".equals(item)) {
+				String losaName = txtSearch.getText();
+				allCrimeData = CrimeDAO.getCrimeDataByLSOAname(losaName);
+			}
+		} catch (CrimeDataNotFoundException e) {
+			allCrimeData = new ArrayList<>();
+		}
+
+		if (allCrimeData.size() > 10) {
+
+			allCrimeData = allCrimeData.subList(0, 10);
+
+		}
+
+		tabel.setModel(new CrimeTableModel());
+
 	}
 
 	static final private String[] columns = { "crimeId", "month", "reportedBy", "fallsWithin", "longitude", "latitude",
