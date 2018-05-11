@@ -13,7 +13,7 @@ public class DatabaseHandler {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cde", "root", "");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cde", "", "");
 
 		} catch (Exception e) {
 			throw new EngineNotWorkingException("Database connection not established...");
